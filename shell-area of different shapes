@@ -1,0 +1,26 @@
+#!/bin/bash
+echo "Enter the shape (circle, rectangle, triangle): "
+read shape
+
+if [ "$shape" == "circle" ]; then
+  echo "Enter the radius: "
+  read radius
+  area=$(echo "3.14 * ($radius * $radius)" | bc)
+  echo "The area of the circle is $area"
+elif [ "$shape" == "rectangle" ]; then
+  echo "Enter the length: "
+  read length
+  echo "Enter the width: "
+  read width
+  area=$((length * width))
+  echo "The area of the rectangle is $area"
+elif [ "$shape" == "triangle" ]; then
+  echo "Enter the base: "
+  read base
+  echo "Enter the height: "
+  read height
+  area=$((base * height / 2))
+  echo "The area of the triangle is $area"
+else
+  echo "Invalid shape"
+fi
