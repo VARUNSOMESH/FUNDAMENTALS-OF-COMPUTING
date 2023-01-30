@@ -1,0 +1,25 @@
+#!/bin/bash
+echo "Enter the value of a:"
+read a
+echo "Enter the value of b:"
+read b
+echo "Enter the value of c:"
+read c
+# calculate the discriminant
+discriminant=$(echo "($b * $b) - (4 * $a * $c)" | bc -l)
+# check if the discriminant is negative
+if (( $(echo "$discriminant < 0" | bc -l) ))
+then
+    echo "The equation has no real roots."
+else
+    # calculate the roots
+    root1=$(echo "(- $b + sqrt($discriminant)) / (2 * $a)" | bc -l)
+    root2=$(echo "(- $b - sqrt($discriminant)) / (2 * $a)" | bc -l)
+    # check if the discriminant is zero
+    if (( $(echo "$discriminant == 0" | bc -l) ))
+    then
+        echo "The equation has one real root: $root1"
+    else
+        echo "The equation has two real roots: $root1 and $root2"
+    fi
+fi
