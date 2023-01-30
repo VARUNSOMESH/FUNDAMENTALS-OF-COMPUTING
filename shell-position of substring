@@ -1,0 +1,12 @@
+#!/bin/bash
+echo "Enter a string: "
+read string
+echo "Enter a substring: "
+read substring
+
+pos=`expr index "$string" "$substring"`
+if [ $pos -gt 0 ]; then
+    echo "The substring is present at position $pos"
+else
+    echo "The substring is not present in the string"
+fi
