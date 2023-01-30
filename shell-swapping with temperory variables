@@ -1,0 +1,4 @@
+temp=$1
+2=$temp
+echo "First number: $1"
+echo "Second number: $2"
