@@ -1,0 +1,29 @@
+#!/bin/bash
+echo "Enter the student's name:"
+read name
+echo "Enter the student's marks for subject 1:"
+read mark1
+echo "Enter the student's marks for subject 2:"
+read mark2
+echo "Enter the student's marks for subject 3:"
+read mark3
+total=$((mark1 + mark2 + mark3))
+average=$((total / 3))
+if [ $average -ge 90 ]
+then
+    echo "Grade: A"
+elif [ $average -ge 80 ]
+then
+    echo "Grade: B"
+elif [ $average -ge 70 ]
+then
+    echo "Grade: C"
+elif [ $average -ge 60 ]
+then
+    echo "Grade: D"
+else
+    echo "Grade: F"
+fi
+echo "Name: $name"
+echo "Total: $total"
+echo "Average: $average"
